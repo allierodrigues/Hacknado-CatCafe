@@ -1,11 +1,5 @@
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.util.ArrayList;
-
-import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
 public class Frame extends JFrame {
@@ -72,11 +66,4 @@ public class Frame extends JFrame {
             try{Thread.sleep(1);}catch(Exception e){}
         }
     }
-
-    public void draw(Graphics g) //throws java.io.IOException 
-    {
-        //BufferedImage img1 = ImageIO.read(new File("src/cat.png"));
-        //g.drawImage(img1, 0 ,0,800,450,null);
-    }
-
 }
