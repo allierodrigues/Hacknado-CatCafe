@@ -1,11 +1,8 @@
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.ArrayList;
 
 
 /* ****************** SCENES ********************
@@ -25,7 +22,6 @@ class Player implements MouseListener
 
 	int currentScene;
 	int width, height;
-//	ArrayList<Action> actionList = new ArrayList();
 	
 	int day;
 	int coffeeBeans;
@@ -80,10 +76,10 @@ class Player implements MouseListener
 	        g.setFont(h1);
 	        g.drawString("Cat Cafe", 285, 150);
 	        g.setFont(h4);
-	        g.drawString("Your cats need coffee.",313,195);
-	        g.drawString("Can you manage your coffee and your cats?",234,210);
+	        g.drawString("Coffee beans are almost extinct and your cats need coffee.",200,195);
+	        g.drawString("Can you save coffee and your cats?",264,210);
 	        
-	        g.fillRect(350,250,100,50); //button shadow
+	        g.fillRect(350,250,100,50); 
 	        
 	        g.setColor(new Color(157,217,210));
 	        g.fillRect(345,245,100,50);
@@ -119,7 +115,7 @@ class Player implements MouseListener
 		g.drawString("Your cat will die if it isn't fed daily.", 100, 230);
 		g.drawString("If all your cats have died, it's game over.", 100, 250);
 		
-        g.fillRect(350,300,100,50); //button shadow
+        g.fillRect(350,300,100,50); 
         
         g.setColor(new Color(255,255,168));
         g.fillRect(345,295,100,50);
@@ -153,14 +149,14 @@ class Player implements MouseListener
 		g.drawString("2. Select how much coffee you want to plant.", 150, 170);
 		g.drawString("3. Click on NEXT DAY and recieve your harvest.", 150, 190);
 
-		g.drawString("Plant more coffee beans to harvest more coffee beans.", 100, 250);
+		g.drawString("You can only plant once a day. Plant more to get larger profits!", 100, 250);
 		
 		g.setFont(h6);
 		g.drawString("nerd info: the amount of coffee harvested is a logarithmic function of how much is planted. this comes from the idea that the more", 30, 420);
 		g.drawString("plants you have in an ecosystem, the more plants will grow. in reality, it's more complicated than one logarithm, obviously.", 30, 435);
 		 
 		
-        g.fillRect(350,300,100,50); //button shadow
+        g.fillRect(350,300,100,50); 
         
         g.setColor(new Color(255,255,168));
         g.fillRect(345,295,100,50);
@@ -180,6 +176,7 @@ class Player implements MouseListener
 		coffeeBeans = 200;
 		coffeeHarvested = 0;
 		currentScene++;
+		
 		/*
 		home(g);
 		g.setColor(new Color(255,192,255,128));
@@ -187,8 +184,7 @@ class Player implements MouseListener
 		
 		//name your first cat
 		*/
-		
-		
+
 	}
 	
 	public void play(Graphics g)
@@ -231,7 +227,7 @@ class Player implements MouseListener
 		g.drawString(" coffee beans: " + coffeeBeans, 60, 65);
 		g.drawString(" day " + day, 560, 65);
 		
-		g.fillRect(55, 90, 200, 50); //button shadows
+		g.fillRect(55, 90, 200, 50);
 		g.fillRect(625, 390, 120, 40);
 		g.fillRect(605, 90, 150, 70);
 		
@@ -285,7 +281,7 @@ class Player implements MouseListener
 		g.drawString("imagine there's a happy cat here",100,250);
 		g.drawString("imagine there's a hyper cat here",500,250);
 		
-        g.fillRect(350,350,100,50); //button shadow
+        g.fillRect(350,350,100,50);
         
         g.setColor(new Color(255,255,168));
         g.fillRect(345,345,100,50);
@@ -357,7 +353,7 @@ class Player implements MouseListener
 			
 			g.setColor(new Color(67,45,36));	
 			g.drawString("You have already planted today", 200, 200);
-			g.fillRect(350, 350, 100, 50); //button shadow
+			g.fillRect(350, 350, 100, 50);
 	        
 			g.setColor(new Color(255,255,168));
 	        g.fillRect(345,345,100,50);
@@ -387,11 +383,11 @@ class Player implements MouseListener
 			g.drawString("Coffee beans: " + coffeeBeans, 70, 140);
 			g.drawString("Number of coffee beans selected: " + coffeeToPlant, 140, 200);
 			
-			drawButton(g, -10);
-			drawButton(g, 50);
-			drawButton(g, 110);
-			drawButton(g, 170);
-			drawButton(g, 230);		
+			drawNumberButton(g, -10);
+			drawNumberButton(g, 50);
+			drawNumberButton(g, 110);
+			drawNumberButton(g, 170);
+			drawNumberButton(g, 230);		
 			
 			g.setFont(h2);
 			g.setColor(new Color(67,45,36));
@@ -403,7 +399,7 @@ class Player implements MouseListener
 			
 			g.setColor(new Color(67,45,36));	
 			g.fillRect(325, 250, 150, 80);
-			g.fillRect(350, 350, 100, 50); //button shadow
+			g.fillRect(350, 350, 100, 50); 
 	        
 			g.setColor(new Color(36,127,67));
 		    g.fillRect(320, 245, 150, 80);
@@ -478,7 +474,7 @@ class Player implements MouseListener
 	
 		
 		g.setColor(new Color(67,45,36));	
-		g.fillRect(350, 350, 100, 50); //button shadow
+		g.fillRect(350, 350, 100, 50);
         
 		g.setColor(new Color(255,255,168));
         g.fillRect(345,345,100,50);
@@ -504,19 +500,21 @@ class Player implements MouseListener
 		g.setColor(new Color(67,45,36));
 		g.drawString("GAME OVER", 100,100);
 		
-		g.drawString("you survived for " + (day-1) + "day(s).", 100,150);
+		g.setFont(h4);
+		g.drawString("You survived for " + (day-1) + "day(s).", 100,150);
+		g.setFont(h3);
 		g.drawString("Play again?", 100,200);
 		
 		g.setColor(new Color(67,45,36));	
-		g.fillRect(350, 350, 100, 50); //button shadow
+		g.fillRect(340, 350, 120, 50);
         
 		g.setColor(new Color(255,255,168));
-        g.fillRect(345,345,100,50);
+        g.fillRect(335, 345, 120, 50);
         
         g.setFont(h2);
 
         g.setColor(new Color(114,68,35));
-        g.drawString("REPLAY", 350, 383);
+        g.drawString("REPLAY", 334, 383);
 		
 		
 	}
@@ -545,7 +543,7 @@ class Player implements MouseListener
 		g.fillRect(0,(int)(0.75*height),width,10);	      
     }
     
-	void drawButton(Graphics g, int x)
+	void drawNumberButton(Graphics g, int x)
 	{
 		g.setColor(new Color(67,45,36));
 		
@@ -671,9 +669,6 @@ class Player implements MouseListener
 			REPLAY = true;
 
 		}
-		
-		
-		
 	}
 
 	@Override
