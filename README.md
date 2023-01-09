@@ -1,6 +1,5 @@
 # Hacknado-CatCafe
-
-This is a business game involving cats and coffee beans.
+A business game involving cats and coffee beans.
 Coffee beans are almost extinct and your cats need coffee! Can you save the world's favorite beverage and the internet's favorite animal from extinction?
 
 # Inspiration
