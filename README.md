@@ -10,7 +10,7 @@ This hackathon's "climate crisis" theme inspired this project. I decided to focu
 The game ends when your cats die. You can buy as many cats as you'd like, but you must feed them coffee beans every day. To earn coffee beans, you can plant them (only once a day) and collect your harvest the next day. It's similar to investing money and earning a profit on it. Here the profit varies: the more you plant at a time the more profit you make. There are even negative profits (losses), so be careful!
 
 # Game Strategy and the interesting math behind it
-The more cats you have, the more difficult it is to sustain. One guaranteed way to never lose the game is to have one cat and feed it 50 coffee beans (the minimum) and plant 100 coffee beans each day. This way, you start out with 200 coffee beans every day. I used this equilibrium to build the logarithmic equation to calculate profits. 
+The more cats you have, the more difficult it is to sustain. One guaranteed way to never lose the game is to keep only one cat and feed it 50 coffee beans (the minimum) and plant 100 coffee beans each day. This way, you start out with 200 coffee beans every day. I used this equilibrium to build the logarithmic equation to calculate profits. 
 There are beautiful mathematical puzzles that arise from this model. For example, how many days minimum would it take for you to get 8 cats? There are so many ways to do that but I'm not sure what the fastest way is. I'm sure the answer would be fascinating.
 
 # How I built it
