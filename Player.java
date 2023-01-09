@@ -420,6 +420,32 @@ class Player implements MouseListener
 	{
 		
 		NEXTDAY = false;
+		
+		g.setColor(new Color(255,255,168));
+		g.fillRect(0, 0, width, height);
+		
+		g.setColor(new Color(67,45,36));
+		g.drawString("DAY "+ day, 100,100);
+		
+		g.setFont(h3);
+		
+		int i = 0;
+		for(Cat c : Cat.List)	
+		{
+			if (!c.catFed)
+			{
+				g.drawString("Another cat died", 150, 190+i);
+				Cat.List.remove(c);
+				i+=20;
+				break;
+			}
+		}
+		
+		g.drawString("You harvested " + coffeeHarvested + " coffeeBeans", 150, 150);
+
+		g.drawString("You now have " + (int)(coffeeBeans+coffeeHarvested) + " coffeeBeans", 150, 170);
+		
+		
 		if(OKAY)
 		{
 			OKAY = false;
@@ -428,7 +454,7 @@ class Player implements MouseListener
 			coffeeHarvested = 0;
 			isCoffeePlanted = false;
 			coffeeToPlant = 0;
-	
+			
 			for(Cat c : Cat.List)	
 			{
 				if (!c.catFed)
@@ -450,28 +476,8 @@ class Player implements MouseListener
 				currentScene = 4;			
 		}
 		
-		g.setColor(new Color(255,255,168));
-		g.fillRect(0, 0, width, height);
-		
-		g.setColor(new Color(67,45,36));
-		g.drawString("DAY "+ day, 100,100);
-		
-		g.setFont(h3);
-		g.drawString("You harvested " + coffeeHarvested + " coffeeBeans", 150, 150);
 
-		g.drawString("You now have " + (int)(coffeeBeans+coffeeHarvested) + " coffeeBeans", 150, 170);
-		
-		int i = 0;
-		for(Cat c : Cat.List)	
-		{
-			if (!c.catFed)
-			{
-				g.drawString("Your cat, (name), died", 150, 190+i);
-				i+=20;
-				break;
-			}
-		}
-	
+				
 		
 		g.setColor(new Color(67,45,36));	
 		g.fillRect(350, 350, 100, 50);
