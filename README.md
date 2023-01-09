@@ -2,6 +2,9 @@
 A business game involving cats and coffee beans.
 Coffee beans are almost extinct and your cats need coffee! Can you save the world's favorite beverage and the internet's favorite animal from extinction?
 
+#How to Play
+Run catDriver.java in a Java IDE
+
 # Inspiration
 This hackathon's "climate crisis" theme inspired this project. I decided to focus on the **resource management** aspect of the climate crisis and create a game in which surviving is almost impossible due to limited resources. Players should employ a strategy to ensure sufficient coffee generation before they can sustain a house full of hyper cats.
 
